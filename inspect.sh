@@ -9,6 +9,7 @@ puts "GOOD #{request.header.request_uri}"
 wrapped_request = NewRelic::Agent::HTTPClients::HTTPClientRequest.new(request)
 puts "GOOD #{wrapped_request.uri}"
 
+
 uri = wrapped_request.uri # OK 
 segment = NewRelic::Agent::Transaction::ExternalRequestSegment.new HTTPClient, uri, "GET"
 puts "BAD URL #{uri}"
